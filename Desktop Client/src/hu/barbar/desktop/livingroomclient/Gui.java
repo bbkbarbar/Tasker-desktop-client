@@ -171,6 +171,7 @@ public abstract class Gui {
 				commandPanel.add(getPredefinedCommandButton("Disable ToDoItem", Commands.DISBALE_TODO_ITEM + " ", false ));
 				commandPanel.add(getPredefinedCommandButton("Get client count", Commands.GET_CLIENT_COUNT,        true ));
 				commandPanel.add(getPredefinedCommandButton("Send info mail",   Commands.SEND_INFO_MAIL + " ",    false ));
+				commandPanel.add(getPredefinedCommandButton("Get worker info",  Commands.GET_WORKER_INFO + " ",   true ));
 				
 			JPanel pwmPanel = new JPanel(new GridLayout(App.NUMBER_OF_PWM_CHANNELS,1));
 				for(int i=0; i<App.NUMBER_OF_PWM_CHANNELS; i++){

@@ -19,7 +19,8 @@ public class Msg implements Serializable{
 								RGB_COMMAND = 3,
 								REQUEST = 4,
 								PWM_COMMAND = 5,
-								PWM_OUTPUT_STATES = 6;
+								PWM_OUTPUT_STATES = 6,
+								RESPONSE_WORKER_INFO = 7;
 		
 		public static String getTypeText(int type){
 			switch (type) {

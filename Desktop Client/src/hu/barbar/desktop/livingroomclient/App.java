@@ -229,7 +229,16 @@ public class App {
 					gui.showLine("Can not find multile temperature value in temp response message: \"" + message.toString() + "\"");
 				}
 			}else
+			
 				
+			/*
+			 *  Process response what contains worker info
+			 */
+			if(message.getType() == Msg.Types.RESPONSE_WORKER_INFO){
+				if(gui != null){
+					gui.showLine(message.getContent());
+				}
+			}else
 			
 			/*
 			 *  Process response what contains PWM output states
