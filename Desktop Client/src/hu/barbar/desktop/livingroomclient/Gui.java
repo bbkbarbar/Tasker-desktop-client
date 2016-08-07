@@ -28,6 +28,7 @@ public abstract class Gui {
 	
 	public static final String TEXT_INFO_AIR          = "Air: ";
 	public static final String TEXT_INFO_WATER        = "Water: ";
+	private static final String TEXT_INFO_CPU 		  = "CPU: ";
 	private static final String TEXT_INFO_PLACEHOLDER = "                            ";
 	
 	private static final String TEXT_EMPTY = "";
@@ -64,6 +65,7 @@ public abstract class Gui {
 	 */
 	private JLabel tempAir = null;
 	private JLabel tempWater = null;
+	private JLabel tempCPU = null;
 	
 	/*
 	 * PWM panel
@@ -157,11 +159,19 @@ public abstract class Gui {
 			
 				tempAir   = new JLabel(TEXT_INFO_AIR);
 				tempWater = new JLabel(TEXT_INFO_WATER);
+				tempCPU = new JLabel(TEXT_INFO_CPU);
+				//TODO here
 				
-				infoPanel.add(btnRefreshInfos);
-				infoPanel.add(tempAir);
-				infoPanel.add(tempWater);
-				infoPanel.add(new JLabel(TEXT_INFO_PLACEHOLDER));
+				infoPanel.add(btnRefreshInfos);						// 1
+				infoPanel.add(tempAir);								// 2
+				infoPanel.add(tempWater);							// 3
+				infoPanel.add(new JLabel(TEXT_EMPTY));              // 4
+				infoPanel.add(new JLabel(TEXT_EMPTY));              // 5
+				infoPanel.add(new JLabel(TEXT_INFO_PLACEHOLDER));   // 6
+				infoPanel.add(new JLabel(TEXT_EMPTY));              // 7
+				infoPanel.add(new JLabel(TEXT_EMPTY));              // 8
+				infoPanel.add(new JLabel(TEXT_EMPTY));              // 9
+				infoPanel.add(tempCPU);                 			// 10
 			
 			
 			JPanel commandPanel = new JPanel(new GridLayout(14,1));
@@ -372,6 +382,11 @@ public abstract class Gui {
 		}
 		
 		return result;
+	}
+
+	public void showCPUTemp(String content) {
+		tempCPU.setText(TEXT_INFO_CPU + content + "°C");
+		
 	}
 	
 }

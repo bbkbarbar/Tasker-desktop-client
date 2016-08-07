@@ -184,6 +184,20 @@ public class App {
 	private void sendRequestsToRefreshInfos(){
 		getTemperature();
 		getPwmOutputValues();
+		getCPUTemperature();
+	}
+	
+	/**
+	 * Send request to server to get temperature values.
+	 */
+	private void getCPUTemperature() {
+		if(comm != null){
+			if(comm.isConnected()){
+				comm.sendMessage(new Msg(Commands.GET_CPU_TEMP, Msg.Types.REQUEST));
+			}else{
+				gui.showLine("Can not get CPU temperature values: Not connected.");
+			}
+		}
 	}
 	
 	/**
@@ -237,6 +251,20 @@ public class App {
 			if(message.getType() == Msg.Types.RESPONSE_WORKER_INFO){
 				if(gui != null){
 					gui.showLine(message.getContent());
+				}
+			}else
+				
+			/*
+			 *  Process response what contains worker info
+			 */
+			if(message.getType() == Msg.Types.RESPONSE_CPU_TEMP){
+				if(gui != null){
+					String temp = "";
+					String[] parts = message.getContent().split(" ");
+					if(parts.length >= 3){
+						temp = parts[2];
+					}
+					gui.showCPUTemp(temp);
 				}
 			}else
 			
