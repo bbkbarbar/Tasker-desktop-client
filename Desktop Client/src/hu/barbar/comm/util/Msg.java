@@ -37,7 +37,11 @@ public class Msg implements Serializable{
 				return "Pwm command";
 			case Types.PWM_OUTPUT_STATES:
 				return "Pwm output states";
-
+			case Types.RESPONSE_WORKER_INFO:
+				return "Response - worker info";
+			case Types.RESPONSE_CPU_TEMP:
+				return "Response - Cpu temperature";
+				
 			default:
 				return "Undefined";
 			}
