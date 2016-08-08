@@ -10,12 +10,13 @@ public class App {
 
 	public static String version = "v0.32";
 	
-	private static final boolean connectAutomatically = false;
+	private static final boolean connectAutomatically = true;
 	
 	private static final boolean UI_TEST = false;
 	
 	protected static final int NUMBER_OF_PWM_CHANNELS = 16;
 
+	@SuppressWarnings("unused")
 	private static App me = null;
 	
 	private static Gui gui = null;
@@ -62,6 +63,7 @@ public class App {
 				System.out.println("D: " + text);
 			}
 		};
+		log.setLevel(LogManager.Level.DEBUG);
 		
 		gui = new Gui(){
 
