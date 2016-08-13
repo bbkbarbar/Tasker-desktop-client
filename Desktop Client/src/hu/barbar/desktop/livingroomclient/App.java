@@ -8,7 +8,7 @@ import hu.barbar.util.LogManager;
 
 public class App {
 
-	public static String version = "v0.32";
+	public static String version = "v0.33";
 	
 	private static final boolean connectAutomatically = true;
 	

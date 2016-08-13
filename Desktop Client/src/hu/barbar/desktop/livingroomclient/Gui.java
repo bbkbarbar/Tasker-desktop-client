@@ -43,6 +43,8 @@ public abstract class Gui {
 
 	private static final String TEXT_BTN_GET_VALUE = "Get";
 	private static final String TEXT_BTN_SET_VALUE = "Set";
+
+	private static final int DEFAULT_TAB_SIZE = 3;
 	
 	
 	private int top, left, width, height;
@@ -190,6 +192,7 @@ public abstract class Gui {
 				
 			JPanel centerPanel = new JPanel(new BorderLayout());
 				logArea = new JTextArea(TEXT_EMPTY);
+				logArea.setTabSize(DEFAULT_TAB_SIZE);
 				logScroll = new JScrollPane(logArea);
 				centerPanel.add(logScroll, BorderLayout.CENTER);
 				
