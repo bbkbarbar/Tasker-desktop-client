@@ -1,10 +1,11 @@
 package hu.barbar.desktop.livingroomclient;
 
+import java.util.logging.LogManager;
+
 import hu.barbar.comm.client.Client;
 import hu.barbar.comm.util.Commands;
 import hu.barbar.comm.util.Msg;
 import hu.barbar.comm.util.PWMMessage;
-import hu.barbar.util.LogManager;
 
 public class App {
 
@@ -31,39 +32,6 @@ public class App {
 	}
 	
 	public App() {
-		
-		log = new LogManager(LogManager.Level.DEBUG) {
-			
-			@Override
-			public void showWarn(String text) {
-				System.out.println("W: " + text);
-				if(gui != null){
-					gui.showLine("W: " + text);
-				}
-			}
-			
-			@Override
-			public void showInfo(String text) {
-				System.out.println("I: " + text);
-				if(gui != null){
-					gui.showLine("I: " + text);
-				}
-			}
-			
-			@Override
-			public void showError(String text) {
-				System.out.println("E: " + text);
-				if(gui != null){
-					gui.showLine("E: " + text);
-				}
-			}
-
-			@Override
-			public void showDebug(String text) {
-				System.out.println("D: " + text);
-			}
-		};
-		log.setLevel(LogManager.Level.DEBUG);
 		
 		gui = new Gui(){
 
