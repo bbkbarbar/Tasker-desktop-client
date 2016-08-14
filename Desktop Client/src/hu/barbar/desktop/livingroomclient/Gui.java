@@ -20,7 +20,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-import hu.barbar.comm.util.Commands;
+import hu.barbar.comm.util.tasker_comm.Commands;
 
 public abstract class Gui {
 	

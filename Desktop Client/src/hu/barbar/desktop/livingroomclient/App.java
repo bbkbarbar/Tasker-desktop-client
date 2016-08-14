@@ -3,9 +3,9 @@ package hu.barbar.desktop.livingroomclient;
 import java.util.logging.LogManager;
 
 import hu.barbar.comm.client.Client;
-import hu.barbar.comm.util.Commands;
 import hu.barbar.comm.util.Msg;
-import hu.barbar.comm.util.PWMMessage;
+import hu.barbar.comm.util.tasker_comm.Commands;
+import hu.barbar.comm.util.tasker_comm.PWMMessage;
 
 public class App {
 
