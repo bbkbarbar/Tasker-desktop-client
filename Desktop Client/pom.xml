@@ -38,8 +38,8 @@
     </dependency>
     
     <dependency>
-    	<groupId>hu.barbar.comm</groupId>
-    	<artifactId>util.tasker-comm</artifactId>
+    	<groupId>hu.barbar</groupId>
+    	<artifactId>comm.util.tasker</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
     </dependency>
     

@@ -4,8 +4,8 @@ import java.util.logging.LogManager;
 
 import hu.barbar.comm.client.Client;
 import hu.barbar.comm.util.Msg;
-import hu.barbar.comm.util.tasker_comm.Commands;
-import hu.barbar.comm.util.tasker_comm.PWMMessage;
+import hu.barbar.comm.util.tasker.Commands;
+import hu.barbar.comm.util.tasker.PWMMessage;
 
 public class App {
 
@@ -112,7 +112,9 @@ public class App {
 				}
 				int[] pwmValuesToSet = gui.getPwmValuesFromSliders();
 				PWMMessage msg = new PWMMessage(channel, pwmValuesToSet[channel]);
-				comm.sendMessage(msg);
+				if(comm.sendMessage(msg)){
+					gui.showLine("SENT:\n" + msg.toString());
+				}
 				getPwmOutputValues();
 			}
 			
