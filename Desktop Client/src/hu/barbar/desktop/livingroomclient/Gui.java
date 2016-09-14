@@ -29,6 +29,7 @@ public abstract class Gui {
 	public static final String TEXT_INFO_AIR          = "Air: ";
 	public static final String TEXT_INFO_WATER        = "Water: ";
 	private static final String TEXT_INFO_CPU 		  = "CPU: ";
+	private static final String TEXT_INFO_HUMIDITY	  = "Humidity: ";
 	private static final String TEXT_INFO_PLACEHOLDER = "                            ";
 	
 	private static final String TEXT_EMPTY = "";
@@ -68,6 +69,7 @@ public abstract class Gui {
 	private JLabel tempAir = null;
 	private JLabel tempWater = null;
 	private JLabel tempCPU = null;
+	private JLabel humidity = null;
 	
 	/*
 	 * PWM panel
@@ -162,12 +164,12 @@ public abstract class Gui {
 				tempAir   = new JLabel(TEXT_INFO_AIR);
 				tempWater = new JLabel(TEXT_INFO_WATER);
 				tempCPU = new JLabel(TEXT_INFO_CPU);
-				//TODO here
+				humidity = new JLabel(TEXT_INFO_HUMIDITY);
 				
 				infoPanel.add(btnRefreshInfos);						// 1
 				infoPanel.add(tempAir);								// 2
 				infoPanel.add(tempWater);							// 3
-				infoPanel.add(new JLabel(TEXT_EMPTY));              // 4
+				infoPanel.add(humidity);              				// 4
 				infoPanel.add(new JLabel(TEXT_EMPTY));              // 5
 				infoPanel.add(new JLabel(TEXT_INFO_PLACEHOLDER));   // 6
 				infoPanel.add(new JLabel(TEXT_EMPTY));              // 7
@@ -391,5 +393,10 @@ public abstract class Gui {
 		tempCPU.setText(TEXT_INFO_CPU + content + "°C");
 		
 	}
+	
+	public void showHumidityOnUI(int humidityValue) {
+		humidity.setText(TEXT_INFO_HUMIDITY + humidityValue + "%");
+	}
+	
 	
 }

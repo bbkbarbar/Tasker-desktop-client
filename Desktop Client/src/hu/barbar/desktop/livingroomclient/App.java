@@ -157,6 +157,18 @@ public class App {
 		getTemperature();
 		getPwmOutputValues();
 		getCPUTemperature();
+		getHumidityValue();
+	}
+	
+	/**
+	 * Send request to server to get humidity value.
+	 */
+	private void getHumidityValue() {
+		Msg requestToGetHumidity = new Msg(Commands.GET_ONLY_HUMIDITY, Msg.Types.REQUEST);
+		if(comm != null && comm.isConnected()){
+			comm.sendMessage(requestToGetHumidity);
+			return;
+		}
 	}
 	
 	/**
@@ -224,6 +236,30 @@ public class App {
 				if(gui != null){
 					gui.showLine(message.getContent());
 				}
+			}else
+				
+			
+			/*
+			 *  Process humidity response
+			 */
+			if(message.getType() == Msg.Types.RESPONSE_HUMIDITY){
+				
+				if(message.getContent().startsWith("Humidity: ")){
+					String[] parts = message.getContent().split(" ");
+					if(parts.length > 1){
+						int humidityValue = Integer.valueOf(parts[1]);
+						if(gui != null){
+							gui.showHumidityOnUI(humidityValue);
+						}
+					}else{
+						if(gui != null){
+							gui.showLine("Can not find humidity value in response message: \"" + message.toString() + "\"");
+						}else{
+							System.out.println("Can not find humidity value in response message: \"" + message.toString() + "\"");
+						}
+					}
+				}
+				
 			}else
 				
 			/*
