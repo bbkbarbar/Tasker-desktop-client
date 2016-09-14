@@ -395,7 +395,11 @@ public abstract class Gui {
 	}
 	
 	public void showHumidityOnUI(int humidityValue) {
-		humidity.setText(TEXT_INFO_HUMIDITY + humidityValue + "%");
+		if(humidityValue < 0){
+			humidity.setText(TEXT_INFO_HUMIDITY + "--%");
+		}else{
+			humidity.setText(TEXT_INFO_HUMIDITY + humidityValue + "%");
+		}
 	}
 	
 	
