@@ -9,13 +9,17 @@ import hu.barbar.comm.util.tasker.PWMMessage;
 
 public class App {
 
-	public static String version = "v0.33";
+	public static String version = "v0.34";
 	
 	private static final boolean connectAutomatically = true;
 	
 	private static final boolean UI_TEST = false;
 	
 	protected static final int NUMBER_OF_PWM_CHANNELS = 16;
+
+	public static final String DEFAULT_HOSTNAME = " barbarhome.ddns.net ";
+	
+	public static final String DEFAULT_PORT = " 10714 ";
 
 	@SuppressWarnings("unused")
 	private static App me = null;

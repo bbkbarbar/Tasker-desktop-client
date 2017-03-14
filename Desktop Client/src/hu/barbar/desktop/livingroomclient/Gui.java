@@ -110,9 +110,9 @@ public abstract class Gui {
 		
 			connectionPanel.setToolTipText("ConnectionPanel");
 			
-			tfHost = new JTextField(" barbarhome.ddns.net ");
+			tfHost = new JTextField(App.DEFAULT_HOSTNAME);
 			connectionPanel.add(tfHost);
-			tfPort = new JTextField(" 10714 ");
+			tfPort = new JTextField(App.DEFAULT_PORT);
 			connectionPanel.add(tfPort);
 			
 			btnConnect = new JButton(TEXT_BTN_CONNECT);  
