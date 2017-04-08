@@ -161,7 +161,7 @@ public class App {
 		getTemperature();
 		getPwmOutputValues();
 		getCPUTemperature();
-		getHumidityValue();
+		//getHumidityValue();
 	}
 	
 	/**

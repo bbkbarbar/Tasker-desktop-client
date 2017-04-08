@@ -244,7 +244,7 @@ public abstract class Gui {
 		mainFrame.setVisible(true);
 	}
 	
-	private JButton getPredefinedCommandButton(String btnText, String command, boolean instantSend){
+	private JButton getPredefinedCommandButton(String btnText, final String command, final boolean instantSend){
 		JButton btnSendPredefinedCommand = new JButton(btnText);
 		btnSendPredefinedCommand.addActionListener( new ActionListener(){
 		    public void actionPerformed(ActionEvent e){
@@ -262,7 +262,7 @@ public abstract class Gui {
 		return btnSendPredefinedCommand;
 	}
 	
-	private JPanel getPwmPanelItem(int channel){
+	private JPanel getPwmPanelItem(final int channel){
 		JPanel complete = new JPanel(new BorderLayout());
 		JPanel panel = new JPanel(new GridLayout(1, 2));
 		
